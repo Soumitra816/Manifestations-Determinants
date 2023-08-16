@@ -1,1 +1,1 @@
-folder containing data
+This folder contains data
