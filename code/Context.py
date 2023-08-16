@@ -7,10 +7,10 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 from torch.utils.data.sampler import SubsetRandomSampler
 from sklearn.metrics import f1_score, confusion_matrix, accuracy_score, classification_report
-from model import RMS_Fourier, MaskedNLLLoss,MaskedNLLLoss_hu
+from model import conTrans, MaskedNLLLoss,MaskedNLLLoss_hu
 from dataloader import *
 from functions import Conv
-from model import RMS_Fourier, MaskedNLLLoss,Trans
+from model import conTrans, MaskedNLLLoss,Trans
 import config
 from sklearn.model_selection import train_test_split
 
@@ -249,7 +249,7 @@ if __name__ == '__main__':
     #                   n_classes=n_classes,
     #                   dropout=args.dropout,
     #                   attention=args.attention)
-    model = RMS_Fourier(D_m,D_e,D_h,attention=args.attention)
+    model = conTrans(D_m,D_e,D_h,attention=args.attention)
     model1=Trans(D_e+D_h)
     
     if cuda:
